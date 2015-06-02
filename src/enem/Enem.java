@@ -16,11 +16,16 @@ public class Enem {
      */
     public static void main(String[] args) {
         FileReader file = new FileReader();
-//        file.readFileCSVFields("data/fields.csv");
-//        file.readFileQuestionario("data/exemplo.csv");
-//        file.insertCSVDataIntoDatabase("data/DADOS_ENEM_2012.csv");
-//        file.readFileSample("data/DADOS_ENEM_2012.csv");
-        file.countLineFile("data/QUESTIONARIO_ENEM_2012.csv");
+//        file.readFileCSVFields("data/microdados_enem2013/dicionario2.csv", ";", "microdados_enem_2013");
+//        file.readFileSample("data/microdados_enem2013/DADOS/MICRODADOS_ENEM_2013.csv");
+        file.insertConsistenciaEnemEscola2013("data/microdados_enem2013/DADOS/CONSISTENCIA_ENEM_ESCOLA_2013.csv", ",");
+    }
+
+    public void importData(FileReader file) {
+        file.insertItensEnem2012("data/microdados_enem2012/DADOS/ITENS_ENEM_2012.csv");
+        file.insertDadosEnem2012("data/microdados_enem2012/DADOS/DADOS_ENEM_2012.csv");
+        file.insertQuestionarioEnem2012("data/microdados_enem2012/DADOS/QUESTIONARIO_ENEM_2012.csv");
+        file.insertDadosEnem2013("data/microdados_enem2013/DADOS/MICRODADOS_ENEM_2013.csv", ";");
     }
 
 }
