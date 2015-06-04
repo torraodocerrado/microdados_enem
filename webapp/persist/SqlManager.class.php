@@ -12,8 +12,8 @@
 		
 		public function __construct ($fileName)
 		{
-			if ( file_exists ( "../config/{$fileName}.ini" ) )
-				$dbInfo = parse_ini_file ( "../config/{$fileName}.ini" );
+			if ( file_exists ( "config/{$fileName}.ini" ) )
+				$dbInfo = parse_ini_file ( "config/{$fileName}.ini" );
 			else
 				throw new Exception ( "Arquivo {$fileName} não encontrado!" );
 			
@@ -29,7 +29,7 @@
 				switch ( $type )
 				{
 					case "pgsql":
-						$this->conn = new PDO ("pgsql:host={$host};port={$port};dbname={$name}",$user,$pass);
+						$this->conn = pg_connect("host={$host} port={$port} dbname={$name} user={$user} password={$pass}");
 						break;
 					case "mysql":
 						$this->conn = new PDO ("mysql:host={$host};dbname={$name}",$user,$pass);
@@ -60,7 +60,7 @@
 		{
 			try
 			{
-				$result = $this->conn->query($query);
+				$result = $this->conn->query($query, PDO::FETCH_ASSOC);
 				return $result;
 			}
 			catch ( Exception $e)

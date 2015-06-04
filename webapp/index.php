@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="pt">
 	<head>
-		<title>Turma do Funil</title>
+		<title>Microdados Enem</title>
 		<link href="css/stylesheet.css" type="text/css" rel="stylesheet" />
 		<link href="css/table.css" type="text/css" rel="stylesheet" />
 	</head>
@@ -10,8 +10,8 @@
 		<div id="wrap">
 			<div id="menu">
 				<ul>
-					<li><a href="index.php?page=paginacao">Itens Enem 2012</a></li>
-					<li><a href="index.php?page=comparativo">Comparativo entre notas</a></li>
+					<li><a href="index.php?page=itensEnem2012">Itens Enem 2012</a></li>
+					<li><a href="index.php?page=comparativoNotas2012">Comparativo entre notas 2012</a></li>
 					<li><a href="index.php?page=contato">Contato</a></li>
 				</ul>
 			</div>
@@ -29,7 +29,7 @@
 				?>
 			</div>
 			<div>
-				<p>BioBD - PUC-Rio</p>
+				<p>Dados extraídos dos Microdados ENEM 2012</p>
 			</div>
 		</div>
 	</body>
